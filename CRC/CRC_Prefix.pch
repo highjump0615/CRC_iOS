@@ -1,0 +1,158 @@
+//
+// Prefix header for all source files of the 'CocoaTouchStaticLibrary' target in the 'CocoaTouchStaticLibrary' project.
+//
+
+#import <Foundation/Foundation.h>
+
+#define RGBCOLOR(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1]
+#define RGBACOLOR(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+
+#define kDarkGrayColor       RGBCOLOR(51, 51, 51)
+#define kGrayColor           RGBCOLOR(153, 153, 153)
+#define kLightGrayColor      RGBCOLOR(185, 185, 185)
+
+#define kForeColor           RGBCOLOR(247, 147, 30)
+
+#define kLineColor           RGBACOLOR(153, 153, 153, 0.2)
+
+#define kLineHeight          0.6
+
+#define kEquipmentFilterChangedNotification         @"kEquipmentFilterChangedNotification"
+
+#define kEquipmentAddToCartNotification             @"kEquipmentAddToCartNotification"
+#define kEquipmentRemoveFromCartNotification        @"kEquipmentRemoveFromCartNotification"
+#define kEquipmentClearNotification                 @"kEquipmentClearNotification"
+
+#define kEquipmentUpdateCartNotification            @"kEquipmentUpdateCartNotification"
+
+
+#define EQUIPMENT_DOWNLOAD_URL      @"http://crc-sg.appspot.com/public/v1/equipment?full=yes"
+#define EQUIPMENT_VERSION_URL       @"http://crc-sg.appspot.com/public/v1/mversion"
+#define EQUIPMENT_FILTER_URL        @"http://app.camerarental.biz/data/menu.txt"
+#define EQUIPMENT_PROMOTION_URL     @"http://camerarental.biz/app/promo.html"
+
+#define kFilterIDKey                @"kFilterIDKey"
+#define kFilterNameKey              @"kFilterNameKey"
+#define kFilterDisplayNameKey       @"kFilterDisplayNameKey"
+#define kFilterSubFilterKey         @"kFilterSubFilterKey"
+
+#define kEquipmentIDKey             @"kEquipmentIDKey"
+#define kEquipmentInfomationKey     @"kEquipmentInfomationKey"
+#define kEquipmentCostKey           @"kEquipmentCostKey"
+#define kEquipmentImageURLKey       @"kEquipmentImageURLKey"
+#define kEquipmentKindKey           @"kEquipmentKindKey"
+#define kEquipmentCountKey          @"kEquipmentCountKey"
+
+#define kEquipmentCartKey           @"kEquipmentCartKey"
+
+#define kAppDataDirectoryPath       @"CRC"
+
+#define kUserNameKey                @"UserNameKey"
+#define kUserContactNumKey          @"UserConactNumKey"
+#define kUserNRICKey                @"UserNRICKey"
+#define kUserMailKey                @"UserMaikKey"
+
+#define kPortNumForMail             465
+#define kHostNameForMail            @"smtp.gmail.com"
+#define kUserNameForMail            @"app@camerarental.biz"
+#define kPasswordForMail            @"crcapp888"
+#define kFolderNameForMail          @"INBOX"
+
+#define kMsgHeaderForMail           @"Thank you for sending in your order via our mobile app. Kindly note that your booking HAS NOT BEEN CONFIRMED. We will be processing your order shortly, and will send you a confirmation emailalong with booking details once your booking has been confirmed. If you have any enquiries or need to change your booking, please feel free to contact us at "
+
+#define kContactNumForCRC           96504158
+#define kEMailUserNameForCRC        @"CRC"
+#define kEMailAddressForCRC         @"info@camerarental.biz"
+
+#define USER_NAME                   @"-user_name-"
+#define CONTACT_NUM                 @"-contact_number-"
+#define USER_NRIC                   @"-user_nric-"
+#define DATE                        @"-date-"
+#define EQUIPMENT_LIST              @"-equipment_list-"
+#define COMMENT                     @"-comment-"
+
+#define CONTACT_NUM                 @"-contact_number-"
+#define BEGIN_DATE                  @"-begin_date-"
+#define END_DATE                    @"-end_date-"
+#define EQUIPMENT                   @"-equipment-"
+
+#define EQUIPMENT_TEMPLATE          @"<span class=\"s2\">-equipment-</span><br>"
+
+#define SINGLE_DATE_TEMPLATE        @"<span class=\"s2\">-begin_date-</span><br><br>"
+
+#define DOUBLE_DATE_TEMPLATE        @"<span class=\"s2\">-begin_date- - -end_date-</span><br><br>"
+
+
+
+#define MAIL_TEMPLATE @"<html> \
+                        <head> \
+                        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> \
+                        <meta http-equiv=\"Content-Style-Type\" content=\"text/css\"> \
+                        <title></title> \
+                        <style type=\"text/css\"> \
+                        br { display:block; margin-top:0.0px; marin-bottom:0.0px; line-height:4.0px; } \
+                        span.s1 {font: 14.0px Helvetica; font-kerning: none; -webkit-text-stroke: 0px #000000} \
+                        span.s2 {font: 14.0px Helvetica; font-variant-ligatures: no-common-ligatures} \
+                        span.s3 {font: 14.0px Helvetica; font-kerning: none} \
+                        span.s4 {font: 14.0px Helvetica; text-decoration: underline ; font-kerning: none; color: #4787ff; -webkit-text-stroke: 0px #0068cf} \
+                        span.s5 {font: 14.0px Helvetica; font-variant-ligatures: no-common-ligatures; -webkit-text-stroke: 0px #000000} \
+                        </style> \
+                        </head> \
+                        <body> \
+                        <span class=\"s1\">Dear </span><span class=\"s2\">-user_name-</span><span class=\"s1\">,</span><br><br> \
+                        <span class=\"s3\">Thank you for your sending your rental order. </span><br><br> \
+                        <span class=\"s3\">We will be processing your order shortly, and will send you a confirmation email along with booking details once your booking has been confirmed. If you have any enquiries or need to change your booking, please feel free to contact us at <a href=\"tel:96504158\"><span class=\"s4\">96504158</span></a> or <a href=\"mailto:info@camerarental.biz\"><span class=\"s4\">info@camerarental.biz</span></a>. Kindly note that your booking is <b>NOT YET CONFIRMED</b>. </span><br><br> \
+                        <span class=\"s1\"><b>Name: </b> </span><span class=\"s2\">-user_name-</span><br> \
+                        <span class=\"s3\"><b>Contact number: </b></span><a href=\"tel:-contact_number-\"><span class=\"s5\">-contact_number-</span></a><br> \
+                        <span class=\"s3\"><b>NRIC/FIN/Passport No.: </b> </span><span class=\"s5\">-user_nric-</span><br><br> \
+                        <span class=\"s3\"><b>Rental date(s):</b></span><br> \
+                        -date- \
+                        <span class=\"s3\"><b>Equipment(s):</b></span><br> \
+                        -equipment_list- \
+                        <span class=\"s3\"><br><b>Comments:</b></span><br> \
+                        <span class=\"s2\"><i>-comment-</i></span><br><br><br> \
+                        <span class=\"s3\">Thank you!</span><br> \
+                        <span class=\"s3\">Regards,</span> \
+                        <span class=\"s3\">Camera Rental Centre</span> \
+                        </body> \
+                        </html>"
+
+#define INFO_CONTACT    @"96504158"
+#define INFO_MAIL       @"info@camerarental.biz"
+
+#define INFO_HTML_BODY  @"<html> \
+                        <head> \
+                        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> \
+                        <meta http-equiv=\"Content-Style-Type\" content=\"text/css\"> \
+                        <style type=\"text/css\"> \
+                        p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica} \
+                        span.s1 {font-variant-ligatures: no-common-ligatures; color: #7f7f7f;} \
+                        span.s2 {text-decoration: underline ; font-kerning: none; color: #7f7f7f; -webkit-text-stroke: 0px #0068cf} \
+                        span.s3 {font-kerning: none; color: #7f7f7f; -webkit-text-stroke: 0px #000000} \
+                        </style> \
+                        </head> \
+                        <body> \
+                        <p class=\"p1\"><span class=\"s1\">If you do not receive an email reply to your booking enquiry within 24 hours, please call/SMS us at <a href=\"tel:96504158\"> <span class=\"s2\">96504158</span></a> or email to \"<a href=\"mailto:info@camerarental.biz\"> <span class=\"s2\">info@camerarental.biz</span></a>\" so that we can check on the status of your request.</span></p> \
+                        </body> \
+                        </html>"
+
+#define BOOKING_HTML    @"<html> \
+                        <head> \
+                        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> \
+                        <meta http-equiv=\"Content-Style-Type\" content=\"text/css\"> \
+                        <style type=\"text/css\"> \
+                        p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Helvetica} \
+                        p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Helvetica; min-height: 19.0px} \
+                        span.s1 {font-variant-ligatures: no-common-ligatures} \
+                        span.s2 {text-decoration: underline ; font-kerning: none; color: #4787ff; -webkit-text-stroke: 0px #0068cf} \
+                        span.s3 {font-kerning: none; -webkit-text-stroke: 0px #000000} \
+                        </style> \
+                        </head> \
+                        <body> \
+                        <p class=\"p1\"><span class=\"s1\">Thank you. Please await our email for booking confirmation.</span></p> \
+                        <p class=\"p2\"><span class=\"s1\"></span><br></p> \
+                        <p class=\"p1\"><span class=\"s1\">If you do not hear back from us within 24 hours, please call/SMS us at <a href=\"tel:96504158\"> <span class=\"s2\">+65 96504158</span></a></span><span class=\"s3\"> </span><span class=\"s1\"> or email to </span><span class=\"s3\"> <a href=\"mailto:info@camerarental.biz\"> <span class=\"s2\">info@camerarental.biz</span></a></span><span class=\"s1\"> so that we can check on the status of your request.</span></p> \
+                        </body> \
+                        </html>"
+
+extern BOOL             g_receievedMessage;
