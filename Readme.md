@@ -1,4 +1,4 @@
-# [Camera Rental Center](https://play.google.com/store/apps/details?id=com.camerarental.crc)
+# [Camera Rental Center](https://itunes.apple.com/sg/app/camera-rental-centre-singapore/id955743806?mt=8)
 ## (iOS)
 
 Make camera and lens rental as mobile as you are with the Camera Rental Centre App!
