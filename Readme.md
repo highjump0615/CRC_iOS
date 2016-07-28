@@ -3,7 +3,6 @@
 Make camera and lens rental as mobile as you are with the Camera Rental Centre App!
 Download now and get hundreds of rental options right at your fingertips!
 
-* Used Google Maps
 * Implemented customized calendar for app needs
 * Customized Layout for random-width tags
 * Backend is made by myself using PHP 
